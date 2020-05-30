@@ -1,0 +1,25 @@
+func strStr(h string, n string) int {
+    Index := -1
+    lh := len(h)
+    ln := len(n)
+    
+    if ln == 0 {
+        return ln
+    }
+    
+    for i:=0; i<lh-ln+1; i++ {
+        if h[i] == n[0] {
+            Index = i
+            for j:=0; j<ln; j++ {
+                if h[i+j] != n[j] {
+                    Index = -1
+                }
+            }
+            if Index != -1 {
+                return Index
+            }
+        }
+    }
+    
+    return Index
+}
