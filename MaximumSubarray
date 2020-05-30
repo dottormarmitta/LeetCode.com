@@ -1,0 +1,21 @@
+func maxSubArray (array []int) int {
+  
+  // Let us first define two variables:
+  maximum := -2147483647
+  carrysum := 0
+  
+  // Use of the algorithm:
+  l := len(array)
+  for i:=0; i<l; i++ {
+  carrysum += array[i]
+  if carrysum>maximum {
+  maximum = carrysum
+  }
+  if carrysum<=0{
+  carrysum=0
+  }
+  }
+  
+  return maximum
+  
+}
