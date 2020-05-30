@@ -1,0 +1,28 @@
+func longestCommonPrefix(strs []string) string {
+
+  // First I need the minimum length of the strings
+  ls := 2147483648
+  lv := len(strs)
+    if lv == 0 {
+        return ""
+    }
+  for i:=0; i<lv; i++ {
+    if len(strs[i])<ls {
+      ls = len(strs[i])
+    }
+  }
+  
+  // Surely the prefix is less or equal than shorter string
+  output := ""
+  for h:=0; h<ls; h++ {
+    for j:=0; j<lv-1; j++ {
+      if strs[j][h] != strs[j+1][h] {
+        return output
+      }
+    }
+      output = output + string(strs[0][h])
+  }
+  
+  return output
+  
+}
