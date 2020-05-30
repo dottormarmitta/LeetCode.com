@@ -1,0 +1,24 @@
+func merge(A []int, a int, B []int, b int) {
+
+    // I will use two indices, j refers to A and h refers to B
+    j := a-1
+    h := b-1
+    
+    // Loop. If I find A[j]>B[h] -> A[i]=A[j] and A[j]=B[h]. I stop when both j and h are zero.
+    for i:=a+b-1; j>=0 && h>=0; i-- {
+      if A[j] < B[h] {
+        A[i] = B[h]
+        h--
+      } else {
+        A[i] = A[j]
+        A[j] = B[h]
+        j--
+      }
+    }
+    
+    // If h is not zero I have to do the following
+    for i:=0; i<=h; i++ {
+      A[i]=B[i]
+    }
+    
+  }
