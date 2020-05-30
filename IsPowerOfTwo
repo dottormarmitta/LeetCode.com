@@ -1,0 +1,19 @@
+func isPowerOfTwo(n int) bool {
+  
+  // First, I need to check for this trivial case
+  if n==1 {
+    return true
+  }
+  
+  // I can now use this algorithm:
+  k:=2
+  for k<=n {
+    if k==n {
+      return true
+    }
+      k*=2
+  }
+  
+  return false
+  
+}
