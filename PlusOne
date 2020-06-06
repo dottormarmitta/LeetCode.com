@@ -1,0 +1,26 @@
+func plusOne(digits []int) []int {
+
+  l := len(digits)-1
+  carrysum := 0
+  digits[l]++
+  last := 0
+  
+  for i:=l; i>=0; i-- {
+    last = digits[i] + carrysum
+    if last <= 9 {
+      digits[i] = last
+      return digits
+    } else {
+      digits[i] = 0
+      carrysum = 1
+    }
+  }
+  
+  if carrysum == 1 {
+    one := []int{}
+    one = append(one, 1)
+    digits = append(one, digits...)
+  }
+  
+  return digits
+}
