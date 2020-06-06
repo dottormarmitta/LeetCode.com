@@ -1,0 +1,19 @@
+func judgeCircle(moves string) bool {
+    Vert, Hor := 0, 0
+    
+    // Summing up movements:
+    for i:=0; i<len(moves); i++ {
+        if moves[i] == 'U' {
+            Vert++
+        } else if moves[i] == 'D' {
+            Vert--
+        } else if moves[i] == 'R' {
+            Hor++
+        } else if moves[i] == 'L'{
+            Hor--
+        }
+    }    
+    
+    // Only if the algeb sum of movements is zero I return to origin
+    return Vert == 0 && Hor == 0
+}
