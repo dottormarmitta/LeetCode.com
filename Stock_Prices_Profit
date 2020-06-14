@@ -1,0 +1,16 @@
+// The idea is the following: I can max profit from delta changes.
+// I build a vector of delta changes. If they are positive, I sum them up.
+
+func maxProfit(prices []int) int {
+    carrysum := 0
+    var delta int
+    
+    for i:=0; i<len(prices)-1; i++ {
+        delta = prices[i+1] - prices[i]
+        if delta > 0 {
+            carrysum += delta
+        }
+    }
+    
+    return carrysum
+}
