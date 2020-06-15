@@ -1,0 +1,17 @@
+// This method is fine for the purpose of the exercise:
+// doing this may present overflow problem if the constraints aren't respected.
+
+func sumZero(n int) []int {
+    
+    partial_sum := 0 
+    output := make([]int, n)
+    
+    for n >= 1 {
+        output[n-1] = n - 1
+        partial_sum += n - 1
+        n--
+    }
+    
+    output[0] = - partial_sum
+    return output
+}
