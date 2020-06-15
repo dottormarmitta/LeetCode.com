@@ -1,0 +1,12 @@
+func runningSum(nums []int) []int {
+    carrysum := 0
+    l := len(nums)
+    output := make([]int, l)
+    
+    for i:=0; i<l; i++ {
+        carrysum += nums[i]
+        output[i] = carrysum
+    }
+    
+    return output
+}
