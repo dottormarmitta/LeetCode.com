@@ -1,0 +1,14 @@
+func numJewelsInStones(J string, S string) int {
+    carry_number := 0
+    
+    for i:=0; i<len(S); i++ {
+        for h:=0; h<len(J); h++ {
+            if S[i]==J[h] {
+                carry_number++
+                h = len(J)
+            }
+        }
+    }
+    
+return carry_number
+}
